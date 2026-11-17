@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime state (node WAL storage and experiment run logs)
+wal_data/
+data/run_logs/
+data/run_logs_tmp_*/
+
+# LaTeX build artifacts (keep main.tex, IEEEtran.*, references.bib, build_report.sh, relatorio.pdf)
+*.synctex.gz
+*.bak
+report/main.aux
+report/main.bbl
+report/main.blg
+report/main.log
+report/main.out
+report/main.toc
+report/main.pdf
+
+# Internal working documents / local Overleaf clone (kept on disk, not pushed)
+video/
+6aebed570cec8cdbe729feda/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/

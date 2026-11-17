@@ -1,0 +1,30 @@
+{
+  "hostname": "17525-nb",
+  "os": "Linux",
+  "os_release": "6.8.0-138-generic",
+  "os_version": "#138-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 31 22:41:49 UTC 2026",
+  "machine": "x86_64",
+  "cpu_model": "13th Gen Intel(R) Core(TM) i7-1355U",
+  "cpu_count": 12,
+  "python_version": "3.12.3",
+  "docker_version": "Docker version 29.9.1, build dfc520d",
+  "docker_compose_version": "5.6.0",
+  "git_revision": "38a4c88",
+  "deployment_model": "independent OS processes communicating over TCP (same CLI as containers)",
+  "timestamp_utc": "2026-10-27T15:23:53Z",
+  "warmup": {
+    "exp1_ricart_agrawala": "1 full CS entry/release on node0 before measurement",
+    "exp2_two_phase_commit": "none (cold start measures commit directly)",
+    "exp3_chandy_lamport": "none (traffic generator starts before snapshot)"
+  },
+  "trials_per_config": 10,
+  "experiment_duration_s": {
+    "exp1": 86.9,
+    "exp2": 46.9,
+    "exp3": 26.9
+  },
+  "notes": "Faults are injected explicitly per scenario (delay, loss, partition, crash); channels are reliable FIFO TCP by default. Percentiles are computed per configuration over independent trials.",
+  "exp1_rows": 120,
+  "exp2_rows": 90,
+  "exp3_rows": 60
+}

@@ -1,0 +1,94 @@
+services:
+  node1:
+    build: .
+    container_name: mc714-node1
+    command: >
+      node
+      --id node1
+      --host 0.0.0.0
+      --port 8001
+      --peers "node1=node1:8001,node2=node2:8002,node3=node3:8003,node4=node4:8004,node5=node5:8005"
+      --auditor node1
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./wal_data/node1:/app/wal_data
+    networks:
+      - mc714-net
+    restart: unless-stopped
+
+  node2:
+    build: .
+    container_name: mc714-node2
+    command: >
+      node
+      --id node2
+      --host 0.0.0.0
+      --port 8002
+      --peers "node1=node1:8001,node2=node2:8002,node3=node3:8003,node4=node4:8004,node5=node5:8005"
+      --auditor node1
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./wal_data/node2:/app/wal_data
+    networks:
+      - mc714-net
+    restart: unless-stopped
+
+  node3:
+    build: .
+    container_name: mc714-node3
+    command: >
+      node
+      --id node3
+      --host 0.0.0.0
+      --port 8003
+      --peers "node1=node1:8001,node2=node2:8002,node3=node3:8003,node4=node4:8004,node5=node5:8005"
+      --auditor node1
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./wal_data/node3:/app/wal_data
+    networks:
+      - mc714-net
+    restart: unless-stopped
+
+  node4:
+    build: .
+    container_name: mc714-node4
+    command: >
+      node
+      --id node4
+      --host 0.0.0.0
+      --port 8004
+      --peers "node1=node1:8001,node2=node2:8002,node3=node3:8003,node4=node4:8004,node5=node5:8005"
+      --auditor node1
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./wal_data/node4:/app/wal_data
+    networks:
+      - mc714-net
+    restart: unless-stopped
+
+  node5:
+    build: .
+    container_name: mc714-node5
+    command: >
+      node
+      --id node5
+      --host 0.0.0.0
+      --port 8005
+      --peers "node1=node1:8001,node2=node2:8002,node3=node3:8003,node4=node4:8004,node5=node5:8005"
+      --auditor node1
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./wal_data/node5:/app/wal_data
+    networks:
+      - mc714-net
+    restart: unless-stopped
+
+networks:
+  mc714-net:
+    driver: bridge
